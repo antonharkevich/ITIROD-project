@@ -1,5 +1,7 @@
 # ITIROD-project
 
+ХАРКЕВИЧ АНТОН ПАВЛОВИЧ ИИТП 953505
+
 Проект по аналлитике данных о шахматных играх.
 
 ![image](https://user-images.githubusercontent.com/61267091/157054869-161f64c6-c65e-4314-bbd9-43a61e2d5cec.png)
