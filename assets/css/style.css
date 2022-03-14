@@ -1,8 +1,6 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-
-    font-size: 16px;
     line-height: 1.6;
     background-color: #576A7D;
 }
@@ -19,22 +17,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
-.intro {
-    width: 100%;
-    height: 100vh;
-}
 
 
 .header {
     width: 100%;
-    height: 70px;
-    padding-top: 15px;
+    height: 9%;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
 
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -50,15 +44,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav{
-    font-size: 16px;
+    font-size: 100%;
     text-transform: uppercase;
 
-    
 }
 
 
 .nav_text{
-    font-size: 16px;
+    font-size: 100%;
     text-transform: uppercase;
     color: #fff;
     
@@ -67,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav__link{
     display: inline-block;
     vertical-align: top;
-    margin: 0 20px;
+    margin: 0 1.2vw;
     position: relative;
 
     color: #fff;
@@ -81,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     display: block;
     width: 100%;
-    height: 3px;
+    height: 3%;
 
 
     background-color: #fff;
@@ -106,14 +99,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .footer{
-    position: relative; /* Фиксированное положение */
+    position: relative; 
     left: 0; bottom: 0; 
     width: 100%;
     float:left;
     padding: 1%;
     background-color: #7F8EA8;  
     border-top: 2px solid silver;
-    margin-top: 10px;
+    margin-top: 5%;
 
 }
 
@@ -121,9 +114,9 @@ h1, h2, h3, h4, h5, h6 {
     float:left;
     width:50%;
     text-align: right;
-    font-size: 25px;
+    font-size:170%;
     color:#fff;
-    padding-top: 20px;
+    padding-top: 1%;
 }
 
 .main_radio {
@@ -378,6 +371,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 
 .small_image{
+    float: left;
     width:3%;
     height:3%;
 }
@@ -467,3 +461,4 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     color: red;
     font-weight: bold;
 }
+
