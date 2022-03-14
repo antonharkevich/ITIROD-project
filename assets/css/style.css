@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     background-color: #576A7D;
 }
@@ -50,9 +50,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav{
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
 
+    
+}
+
+
+.nav_text{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
     
 }
 
@@ -135,8 +143,9 @@ input[type="radio"] {
 
 input[type="radio"] + label { 
     font-weight: bold; 
-    font-size: 20px;
-    color: rgb(0, 0, 0); 
+    font-size: 25px;
+    font-style: italic;
+    color: #d6af23;
     
 } 
 
@@ -198,22 +207,35 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 .main_activity{
     margin-top: 0;
-    padding-left: 4%;
     padding-top: 7%;
-    padding-right: 4%;
+    padding-bottom: 3%;
     position: relative;
 }
 
 
-.main_section{
+.main_section_odd{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: bold; 
+    font-style: italic;
     font-size: 30px;
+    background-color: #748094;
     color: rgb(255, 255, 255);
     text-align: center; 
 }
+
+.main_section_even{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    font-size: 30px;
+    background-color: #7F8EA8;
+    color: rgb(255, 255, 255);
+    text-align: center; 
+}
+
+
 
 
 .main_win_activity{
@@ -270,17 +292,19 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     font-size: 20px;
     color: rgb(255, 255, 255);
     text-align: center; 
+    width: 20%;
 }
 
 
 
 .blitz_section{
     display: inline-block;
-    margin-left:22%;
+    margin-left:18%;
     font-weight: bold; 
     font-size: 20px;
     color: rgb(255, 255, 255);
     text-align: center; 
+    width: 20%;
 }
 
 .rapid_section{
@@ -289,6 +313,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     font-size: 20px;
     color: rgb(255, 255, 255);
     text-align: center; 
+    width: 20%;
 }
 
 
@@ -321,3 +346,124 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     position: relative;
 }
 
+
+
+
+.date_text{
+    color: #d6af23;
+    margin-left: 4%;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.strong_win_text{
+    color: green;
+    font-weight: bold;
+    font-size: 40px;
+    font-style: normal;
+}
+
+
+.strong_loose_text{
+    color: red;
+    font-weight: bold;
+    font-size: 40px;
+    font-style: normal;
+}
+
+.loss_text{
+    margin-right: 4%;
+}
+
+
+
+.small_image{
+    width:3%;
+    height:3%;
+}
+
+
+
+.footer__logo{
+    width:3%;
+    height:3%;
+    margin-top: 1%;
+}
+
+
+.top_player_title{
+    color: black;
+    background-color: #d6af23;
+}
+
+
+.top_player_string{
+    border-bottom: 2px solid silver;
+    width:auto
+}
+
+
+.GM{
+    color: yellow;
+    float: left;
+    text-align: left;
+}
+
+.top_player{
+    font-style: italic;
+    display: inline-block;
+    text-align: center;
+}
+
+.top_rate{
+    color: red;
+    float: right;
+    text-align: right;    
+}
+
+
+
+.simple_date_text{
+    color: #d6af23;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+.top_player_with_play{
+    font-style: italic;
+    border-bottom: 2px solid silver;
+}
+
+
+.strong_win_fil_text{
+    color: rgb(164, 91, 248);
+    font-weight: bold;
+    font-size: 40px;
+    font-style: normal;
+}
+
+
+
+.strong_small_win_fil_text{
+    color: rgb(164, 91, 248);
+    font-weight: bold;
+}
+
+
+
+
+.strong_loose_fil_text{
+    color: red;
+    font-weight: bold;
+    font-size: 40px;
+    font-style: normal;
+}
+
+
+
+.strong_small_loose_fil_text{
+    color: red;
+    font-weight: bold;
+}
