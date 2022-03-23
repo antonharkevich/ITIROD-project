@@ -9,7 +9,6 @@
 <body>
 
 <header class="header">
-    <div class="container">
         <div class="header__inner">
             <nav class = "nav">
                 <a class="nav__link" href="index4.html">top players</a>
@@ -22,32 +21,32 @@
             <p class="nav_text">Anton Harkevich</p>
             <img class = "small_image" src="assets/images/angle-square-right-free-icon-font.png" />
         </div>
-    </div>
 </header>
 
 
+<main class="index_main">
 <section class="main_radio">
-    <div> 
+    <div class="form_radio"> 
         <input id="week" name="radio" value="one" checked="checked" type="radio">
          <label for="week"> <span></span> week </label> 
     </div> 
-    <div> 
+    <div class="form_radio"> 
         <input id="1 month" name="radio" value="two" type="radio"> 
         <label for="1 month"> <span></span> 1 month </label> 
     </div>
-    <div> 
+    <div class="form_radio"> 
         <input id="3 month" name="radio" value="three"  type="radio">
          <label for="3 month"> <span></span> 3 month </label> 
     </div> 
-    <div> 
+    <div class="form_radio"> 
         <input id="6 month" name="radio" value="four" type="radio"> 
         <label for="6 month"> <span></span> 6 month </label> 
     </div>
-    <div> 
+    <div class="form_radio"> 
         <input id="12 month" name="radio" value="five" type="radio">
          <label for="12 month"> <span></span> 12 month </label> 
     </div> 
-    <div> 
+    <div class="form_radio"> 
         <input id="all life" name="radio" value="six" type="radio"> 
         <label for="all life"> <span></span> all life </label> 
     </div>
@@ -55,8 +54,9 @@
 </section>
 <section class="canvas__wrapper">
     <p class="top_player_title">Dynamic of player rating during chosen period</p>
-    <img class="resize-image" src="assets/images/chart.png" alt="Image" />
+    <canvas class="resize-canvas" id="canvas" ></canvas>
 </section>
+</main>
 
 
 <footer class="footer">
@@ -72,4 +72,6 @@
 
 
 </body>
+
+<script src="index.js"></script>
 </html>
