@@ -1,13 +1,14 @@
-var myHeaders = new Headers();
-myHeaders.append('Content-Type', 'application/json');
-
-var myInit = {
-  method: 'GET',
-};
-
-
-
-const request = new Request('https://lichess.org/api/user/antonharkevich', myInit);
+function lichessRequest(){
+  var myHeaders = new Headers();
+  myHeaders.append('Content-Type', 'application/json');
+  
+  var myInit = {
+    method: 'GET',
+  };
+  
+  var user = document.getElementById('ussser').innerHTML;
+  if(user != 'N/A'){
+const request = new Request('https://lichess.org/api/user/'+user, myInit);
 
 
 fetch(request)
@@ -177,7 +178,7 @@ fetch(request)
 
 
 
-  const new_request = new Request('https://lichess.org/api/user/antonharkevich/perf/bullet', myInit);
+  const new_request = new Request('https://lichess.org/api/user/'+user+'/perf/bullet', myInit);
 
 
   fetch(new_request)
@@ -282,3 +283,5 @@ fetch(request)
     }).catch(error => {
       console.error(error);
     });
+  }
+}

@@ -1,3 +1,4 @@
+function lichessRequest(){
 var myHeaders = new Headers();
 myHeaders.append('Content-Type', 'application/json');
 
@@ -5,9 +6,9 @@ var myInit = {
   method: 'GET',
 };
 
-
-const request = new Request('https://lichess.org/api/user/antonharkevich/rating-history', myInit);
-
+var user = document.getElementById('ussser').innerHTML;
+if(user != 'N/A'){
+const request = new Request('https://lichess.org/api/user/' + user + '/rating-history', myInit);
 fetch(request)
   .then(response => {
     if (response.status === 200) {
@@ -62,8 +63,9 @@ fetch(request)
         let w_length = w_finish - w_start;
         let h_length = h_finish - h_start;
 
-
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "black"; // Задаём чёрный цвет для линий 
+        ctx.strokeStyle = 'black';
         ctx.lineWidth = 2.0; // Ширина линии
         ctx.beginPath(); // Запускает путь
         ctx.moveTo(0.08 * w, 0.02 * h); // Указываем начальный путь
@@ -140,8 +142,8 @@ fetch(request)
         ctx.stroke();
 
 
-
-
+        
+        document.getElementById('week').checked = 'checked'; 
 
 
 
@@ -324,12 +326,13 @@ fetch(request)
         ctx.stroke();
 
     })
-
+    
 
   }).catch(error => {
     console.error(error);
   });
-
+}
+}
 
 
 

@@ -1,12 +1,15 @@
-var myHeaders = new Headers();
-myHeaders.append('Content-Type', 'application/json');
+function lichessRequest(){
+  var myHeaders = new Headers();
+  myHeaders.append('Content-Type', 'application/json');
+  
+  var myInit = {
+    method: 'GET',
+  };
+  
+  var user = document.getElementById('ussser').innerHTML;
+  if(user != 'N/A'){
 
-var myInit = {
-  method: 'GET',
-};
-
-
-const request = new Request('https://lichess.org/api/user/antonharkevich/activity', myInit);
+const request = new Request('https://lichess.org/api/user/'+user+'/activity', myInit);
 //const request = new Request('https://lichess.org/api/user/antonharkevich', myInit);
 //const request = new Request('https://lichess.org/api/user/antonharkevich/rating-history', myInit);
 
@@ -43,16 +46,32 @@ fetch(request)
         timezone: 'UTC',
       };
       play_dates[i] = date.toLocaleString("ru", options);
-      games_amounts[i] = response[i]['games']['bullet']['win'] + response[i]['games']['bullet']['loss'];
-      day_wins[i] = response[i]['games']['bullet']['win'];
-      day_loss[i] = response[i]['games']['bullet']['loss'];
-      day_rates[i] = response[i]['games']['bullet']['rp']['after'];
-      if (response[i]['games']['bullet']['rp']['after'] >= response[i]['games']['bullet']['rp']['before']){
-        day_dynamics[i] = ['up'];
-
+      if(response[i]['games'] == undefined){
+        games_amounts[i] = 'N/A';
+        day_wins[i] = 'N/A';
+        day_loss[i] = 'N/A';
+        day_rates[i] = 'N/A';
+        day_dynamics[i] = 'N/A';
+      }
+      else if(response[i]['games']['bullet'] == undefined){
+        games_amounts[i] = 'N/A';
+        day_wins[i] = 'N/A';
+        day_loss[i] = 'N/A';
+        day_rates[i] = 'N/A';
+        day_dynamics[i] = 'N/A';
       }
       else{
-        day_dynamics[i] = ['down'];
+            games_amounts[i] = response[i]['games']['bullet']['win'] + response[i]['games']['bullet']['loss'];
+            day_wins[i] = response[i]['games']['bullet']['win'];
+            day_loss[i] = response[i]['games']['bullet']['loss'];
+            day_rates[i] = response[i]['games']['bullet']['rp']['after'];
+            if (response[i]['games']['bullet']['rp']['after'] >= response[i]['games']['bullet']['rp']['before']){
+              day_dynamics[i] = ['up'];
+
+            }
+            else{
+              day_dynamics[i] = ['down'];
+            }
       }
 
       let html_play_date = document.getElementById("play_date" + i);
@@ -76,8 +95,8 @@ fetch(request)
   }).catch(error => {
     console.error(error);
   });
-
-
+}
+}
 
 
 
