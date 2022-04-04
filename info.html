@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration Form</title>
+      <link rel="stylesheet" href="assets/css/style.css">
+      <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               INFO FORM
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="form-inner">
+               <form onsubmit="updateInfo(event)" class="login">
+                <div class="field">
+                    <input type="text" id="nameUser" placeholder="Your name" required>
+                 </div>
+                  <div class="field">
+                     <input type="text" id="rateBlitz" placeholder="Fide rate blitz" required>
+                  </div>
+                  <div class="field">
+                     <input type="text" id="rateBullet" placeholder="Fide rate bullet" required>
+                  </div>
+                  <div class="field">
+                    <input type="text" id="rateRapid" placeholder="Fide rate rapid" required>
+                 </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Add">
+                  </div>
+               </form>
+
+            </div>
+         </div>
+      </div>
+
+   </body>
+
+   <script src="fire-base.js"></script>
+</html>

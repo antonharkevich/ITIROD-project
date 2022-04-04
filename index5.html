@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <nav class = "nav">
+                <a class="nav__link" href="index4.html">top players</a>
+                <a class="nav__link" href="index.html">statistics</a>
+                <a class="nav__link" href="index2.html">player activity</a>
+                <a class="nav__link" href="index3.html">player best and worst games</a>
+                <a class="nav__link" href="index5.html">player info</a>
+            </nav>
+            <img class = "small_image" src="assets/images/following-free-icon-font.png" />
+            <p class="nav_text" id="ussser">Anton Harkevich</p>
+            <img class = "small_image" onclick="logout()" src="assets/images/angle-square-right-free-icon-font.png" />
+        </div>
+    </div>
+</header>
+
+
+
+<div class = "main_win_stat_activity">
+    <section class="win_section">
+        <p class="top_player_with_play">Рейтинг: <strong class = "strong_win_fil_text" id ="player_rate">2038.67</strong></p>
+        <p class="top_player_with_play">Прогресс за последние игры (<strong id="progress_games">12</strong>): <strong class = "strong_win_fil_text" id="progress">31</strong></p>
+    </section>
+    <section class="loose_section">
+        <p class="top_player_with_play">Вы сильнее <strong class = "strong_loose_fil_text" id="weak_players_percent">90.9%</strong> игроков в Bullet</p>
+        <p class="top_player_with_play">Отклонение рейтинга:<strong class = "strong_loose_fil_text" id="deviation"> 45.00</strong></p>
+    </section>
+</div>
+<div class = "main_stat_activity">
+    <section class="win_section">
+        <h2 class="top_player_title">ПАРТИИ</h2>
+        <p class="top_player_with_play">Всего партий:   <strong class = "strong_win_fil_text" id="games_number_all">1099</strong>&emsp;Рейтинговые игры:   <strong class = "strong_win_fil_text" id="games_number_rate">1063</strong></p>
+        <p class="top_player_with_play">Турнирных партий:   <strong class = "strong_loose_fil_text" id="games_number_tournament">0</strong>&emsp;Партий с берсерком: <strong class = "strong_loose_fil_text" id="games_number_berserk">0</strong></p>
+        <p class="top_player_with_play">Времени за игрой: <strong class = "simple_date_text" id="play_time">1 день, 8 часов и 19 минут</strong></p>
+    </section>
+</div>
+<div class = "main_stat_activity">
+    <section class="loose_section">
+        <h2 class="top_player_title">РЕЗУЛЬТАТИВНОСТЬ</h2>
+        <p class="top_player_with_play">Средний рейтинг соперников	<strong class = "strong_win_fil_text" id="average_players_rate">2038.94</strong></p>
+        <p class="top_player_with_play">Побед	<strong class = "strong_win_fil_text" id="wins_number">|526|</strong> <strong class = "strong_win_fil_text" id="wins_number_percent">(48%)</strong>&emsp;Поражений	<strong class = "strong_loose_fil_text" id="loss_number">|503|</strong> <strong class = "strong_loose_fil_text" id="loss_number_percent">(46%)</strong></p>
+        <p class="top_player_with_play">Ничьих	<strong class = "strong_small_win_fil_text" id="draws_number">|70|</strong> <strong class = "strong_small_win_fil_text" id="draws_number_percent">(6%)</strong>&emsp;Отключений	<strong class = "strong_small_loose_fil_text" id="disconnects_number">|8|</strong> <strong class = "strong_small_loose_fil_text" id="disconnects_number_percent">(1%)</strong></p>
+    </section>
+</div>
+<div class = "main_rate_activity">
+    <section class="win_section">
+        <p class="top_player_with_play">Наивысший рейтинг: <strong class = "strong_win_fil_text" id="the_highest_rate">2145</strong>&emsp;<time class = "simple_date_text" datetime="2022-03-05T00:00:00.000Z" id="the_highest_rate_time" >19 февр. 2022 г., 16:44  </time><p>    
+    </section>
+    <section class="loose_section">
+        <p class="top_player_with_play">Наименьший рейтинг: <strong class = "strong_loose_fil_text" id="the_lowest_rate">1912</strong>&emsp;<time class = "simple_date_text" datetime="2022-03-05T00:00:00.000Z" id="the_lowest_rate_time" >22 нояб. 2021 г., 13:52  </time><p> 
+    </section>
+</div>
+
+
+
+<footer class="footer">
+    <div class="footer__title">
+        Statistics from Lichess with Love
+    </div>
+    <img class = "footer__logo" src="assets/images/trophy-free-icon-font.png" />
+
+    </div>
+</footer>
+
+
+
+
+</body>
+<script src="index5.js"></script>
+<script src="fire-base.js"></script>
+</html>
