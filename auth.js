@@ -19,4 +19,29 @@ signupLink.onclick = (()=>{
 
 
 
+function login(event){
+  event.preventDefault()
+  var email = document.getElementById('email').value
+  var password = document.getElementById('password').value
+  responsePromise = apiLogin(email, password)
+  responsePromise.then(response => {
+    alert('Welcome back')
+    window.location.replace("index.html");
+  });
+}
+
+
+function signUp(event){
+  event.preventDefault()
+  var email = document.getElementById('sign-email').value;
+  var password = document.getElementById('sign-password').value;
+  responsePromise = apiSignUp(email, password)
+  responsePromise.then(response => {
+    alert('Hello')
+    window.location.replace("info.html");
+  });
+}
+
+
+
 

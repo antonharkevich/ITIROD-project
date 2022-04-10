@@ -1,38 +1,7 @@
 function lichessRequest(){
-var myHeaders = new Headers();
-myHeaders.append('Content-Type', 'application/json');
-
-var myInit = {
-  method: 'GET',
-};
-
-var user = document.getElementById('ussser').innerHTML;
-if(user != 'N/A'){
-const request = new Request('https://lichess.org/api/user/' + user + '/rating-history', myInit);
-fetch(request)
-  .then(response => {
-    if (response.status === 200) {
-      return response.json();
-    } else {
-      console.log(response.status)
-      throw new Error('Something went wrong on api server!');
-    }
-  })
-  .then(response => {
-    let result_data = response[0]['points'];
-    for(i = 0; i < result_data.length; i++){
-        result_data[i][1] +=1;
-        if(result_data[i][1] > 12){
-            result_data[i][1] = 1;
-            result_data[i][0] += 1;
-        }
-        if(Math.floor(result_data[i][2]/10) == 0){
-            result_data[i][2] = "0" + result_data[i][2];
-        }
-        if(Math.floor(result_data[i][1]/10) == 0){
-            result_data[i][1] = "0" + result_data[i][1];
-        }
-    }
+    var user = document.getElementById('ussser').innerHTML;
+    responsePromise = lichessAPIRequestRating(user)
+    responsePromise.then(result_data => {
     labels = [];
     data = [];
     j = result_data.length - 7;
@@ -77,10 +46,7 @@ fetch(request)
         
 
         ctx.font = '9px serif';
-        // Массив с меткам месяцев
 
-
-        // Объявляем массив лейблов графика
 
 
 
@@ -88,7 +54,6 @@ fetch(request)
         ctx.fillText(labels[0],(0.08*w) - 0.035 * w , 0.97 * h); 
 
 
-        // Выводим меток
         for(var i = 1; i < 7; i++) { 
             ctx.fillText(labels[i],(0.08*w)+ (i*w_length/labels.length) - 0.035 * w, 0.97 * h); 
             ctx.strokeStyle = 'blue';
@@ -98,15 +63,6 @@ fetch(request)
             ctx.stroke(); 
             
         }
-
-
-
-
-
-
-
-        // Объявляем массив данных  графика
-
 
 
 
@@ -123,7 +79,6 @@ fetch(request)
 
         // Цвет для рисования
         ctx.fillStyle = "black";
-        // Цикл для отображения значений по Y 
         for(let i = 0; i <= 4; i++) { 
             ctx.strokeStyle = 'black';
             ctx.fillText(min_rate+ Math.floor(((4-i)*(max_rate-min_rate)/4)), 0.001 * w, 0.1 * h + i * h / 5); 
@@ -247,17 +202,13 @@ fetch(request)
         
 
         ctx.font = '9px serif';
-        // Массив с меткам месяцев
 
-
-        // Объявляем массив лейблов графика
 
 
 
         let index_labels = Math.floor(labels.length/5);
 
         if (descriptionId != "week"){
-        // Выводим меток
             for(var i = 1; i < 6; i++) { 
                 ctx.fillText(labels[i * index_labels - 1],(0.08*w)+ (i*index_labels*w_length/labels.length) -(1*w_length/labels.length)  - 0.055 * w, 0.97 * h); 
                 ctx.strokeStyle = 'blue';
@@ -271,7 +222,6 @@ fetch(request)
             ctx.fillText(labels[0],(0.08*w) - 0.035 * w , 0.97 * h); 
 
 
-            // Выводим меток
             for(var i = 1; i < 7; i++) { 
                 ctx.fillText(labels[i],(0.08*w)+ (i*w_length/labels.length) - 0.035 * w, 0.97 * h); 
                 ctx.strokeStyle = 'blue';
@@ -282,17 +232,6 @@ fetch(request)
                 
             }
         }
-
-
-
-
-
-
-
-        // Объявляем массив данных  графика
-
-
-
 
 
         min_rate = Math.min(...data);
@@ -307,7 +246,6 @@ fetch(request)
 
         // Цвет для рисования
         ctx.fillStyle = "black";
-        // Цикл для отображения значений по Y 
         for(let i = 0; i <= 4; i++) { 
             ctx.strokeStyle = 'black';
             ctx.fillText(min_rate+ Math.floor(((4-i)*(max_rate-min_rate)/4)), 0.001 * w, 0.1 * h + i * h / 5); 
@@ -332,7 +270,7 @@ fetch(request)
     console.error(error);
   });
 }
-}
+
 
 
 
