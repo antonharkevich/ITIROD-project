@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <nav class = "nav">
+                <a class="nav__link" href="index4.html">top players</a>
+                <a class="nav__link" href="index.html">statistics</a>
+                <a class="nav__link" href="index2.html">player activity</a>
+                <a class="nav__link" href="index3.html">player best and worst games</a>
+                <a class="nav__link" href="index5.html">player info</a>
+            </nav>
+            <img class = "small_image" id="click_img" onclick="lichessRequest()" src="assets/images/following-free-icon-font.png" />
+            <p class="nav_text" id="ussser">N/A</p>
+            <img class = "small_image" onclick="logout()" src="assets/images/angle-square-right-free-icon-font.png" />
+        </div>
+    </div>
+</header>
+
+<div class = "main_win_activity">
+    <section class="win_section">
+        <h2 class="top_player_title">Сonsecutive win streak</h2>
+        <p class="top_player_with_play">Рекордная серия: <strong class="strong_win_fil_text" id = "win_streak_times">8</strong> игр</p>
+        <p class="top_player_with_play">от  <time class = "simple_date_text" datetime="2022-03-05T00:00:00.000Z" id = "best_win_streak_time_from">5 мар. 2022 г.,23.16  </time>до  <time class = "simple_date_text" datetime="2022-03-05T00:00:00.000Z" id = "best_win_streak_time_to">5 мар. 2022 г.,23.16</time></p>
+        <p class="top_player_with_play">Текущая серия: <strong class="strong_win_fil_text" id ="current_win_times">-</strong></p>
+    </section>
+    <section class="loose_section">
+        <h2 class="top_player_title">Сonsecutive loose streak</h2>
+        <p class="top_player_with_play">Рекордная серия: <strong class="strong_loose_fil_text" id = "loose_streak_times">8</strong> игр</p>
+        <p class="top_player_with_play">от  <time class = "simple_date_text" datetime="2022-03-05T00:00:00.000Z" id = "best_loose_streak_time_from">5 мар. 2022 г.,23.16  </time>до  <time class = "simple_date_text" datetime="2022-03-05T00:00:00.000Z" id = "best_loose_streak_time_to">5 мар. 2022 г.,23.16</time></p>
+        <p class="top_player_with_play">Текущая серия: <strong class="strong_loose_fil_text" id ="current_loose_times">-</strong></p>
+    </section>
+</div>
+<div class = "main_win_players_activity">
+    <section class="win_section">
+        <h2 class="top_player_title">Победы против лучших по рейтингу</h2>
+        <p class="top_player_with_play"><em id="best_win_player_name0" >Yousuf_20</em> (<strong class="strong_small_win_fil_text" id="best_win_player_rate0">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_win_player_date0">5 мар. 2022 г.,23.16  </time><p>
+        <p class="top_player_with_play"><em id="best_win_player_name1" >Yousuf_20</em> (<strong class="strong_small_win_fil_text" id="best_win_player_rate1">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_win_player_date1">5 мар. 2022 г.,23.16  </time><p>    
+        <p class="top_player_with_play"><em id="best_win_player_name2" >Yousuf_20</em> (<strong class="strong_small_win_fil_text" id="best_win_player_rate2">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_win_player_date2">5 мар. 2022 г.,23.16  </time><p> 
+        <p class="top_player_with_play"><em id="best_win_player_name3" >Yousuf_20</em> (<strong class="strong_small_win_fil_text" id="best_win_player_rate3">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_win_player_date3">5 мар. 2022 г.,23.16  </time><p> 
+        <p class="top_player_with_play"><em id="best_win_player_name4" >Yousuf_20</em> (<strong class="strong_small_win_fil_text" id="best_win_player_rate4">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_win_player_date4">5 мар. 2022 г.,23.16  </time><p> 
+    </section>
+</div>
+<div class = "main_win_players_activity">
+    <section class="loose_section">
+        <h2 class="top_player_title">Поражения худшим по рейтингу</h2>
+        <p class="top_player_with_play"><em id="best_loose_player_name0" >Yousuf_20</em> (<strong class="strong_small_loose_fil_text" id="best_loose_player_rate0">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_loose_player_date0">5 мар. 2022 г.,23.16  </time><p>
+        <p class="top_player_with_play"><em id="best_loose_player_name1" >Yousuf_20</em> (<strong class="strong_small_loose_fil_text" id="best_loose_player_rate1">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_loose_player_date1">5 мар. 2022 г.,23.16  </time><p>    
+        <p class="top_player_with_play"><em id="best_loose_player_name2" >Yousuf_20</em> (<strong class="strong_small_loose_fil_text" id="best_loose_player_rate2">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_loose_player_date2">5 мар. 2022 г.,23.16  </time><p> 
+        <p class="top_player_with_play"><em id="best_loose_player_name3" >Yousuf_20</em> (<strong class="strong_small_loose_fil_text" id="best_loose_player_rate3">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_loose_player_date3">5 мар. 2022 г.,23.16  </time><p> 
+        <p class="top_player_with_play"><em id="best_loose_player_name4" >Yousuf_20</em> (<strong class="strong_small_loose_fil_text" id="best_loose_player_rate4">2244</strong>)&emsp;<time class = "date_text" datetime="2022-03-05T00:00:00.000Z" id="best_loose_player_date4">5 мар. 2022 г.,23.16  </time><p> 
+    </section>
+</div>
+
+
+
+<footer class="footer">
+    <div class="footer__title">
+        Statistics from Lichess with Love
+    </div>
+    <img class = "footer__logo" src="assets/images/trophy-free-icon-font.png" />
+
+    </div>
+</footer>
+
+<script src="fire-api.js"></script>
+<script src="lichess.js"></script>
+<script src="index3.js"></script>
+</body>
+
+</html>
