@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<header class="header">
+        <div class="header__inner">
+            <nav class = "nav">
+                <a class="nav__link" href="players.html">top players</a>
+                <a class="nav__link" href="rating.html">statistics</a>
+                <a class="nav__link" href="activity.html">player activity</a>
+                <a class="nav__link" href="games.html">player best and worst games</a>
+                <a class="nav__link" href="player-info.html">player info</a>
+            </nav>
+            <img class = "small_image" id="click_img" onclick="lichessRequest()" src="assets/images/following-free-icon-font.png" />
+            <p class="nav_text" id="ussser" >N/A</p>
+            <img class = "small_image"  onclick="logout()" src="assets/images/angle-square-right-free-icon-font.png" />
+        </div>
+</header>
+
+
+<main class="index_main">
+<section class="main_radio" id = "main_radio">
+    <div class="form_radio"> 
+        <input id="week" name="radio" value="one" checked="checked" type="radio">
+         <label for="week"> <span></span> last 7 days </label> 
+    </div> 
+    <div class="form_radio"> 
+        <input id="1 month" name="radio" value="two" type="radio"> 
+        <label for="1 month"> <span></span> last 30 days </label> 
+    </div>
+    <div class="form_radio"> 
+        <input id="3 month" name="radio" value="three"  type="radio">
+         <label for="3 month"> <span></span> last 90 days </label> 
+    </div> 
+    <div class="form_radio"> 
+        <input id="6 month" name="radio" value="four" type="radio"> 
+        <label for="6 month"> <span></span> last 180 days </label> 
+    </div>
+    <div class="form_radio"> 
+        <input id="12 month" name="radio" value="five" type="radio">
+         <label for="12 month"> <span></span> last 360 days </label> 
+    </div> 
+    <div class="form_radio"> 
+        <input id="all life" name="radio" value="six" type="radio"> 
+        <label for="all life"> <span></span> all life </label> 
+    </div>
+    
+</section>
+<section class="canvas__wrapper">
+    <p class="top_player_title_rating">Dynamic of player rating during chosen period</p>
+    <canvas class="resize-canvas" id="canvas" ></canvas>
+</section>
+</main>
+
+
+<footer class="footer">
+    <div class="footer__title">
+        Statistics from Lichess with Love
+    </div>
+    <img class = "footer__logo" src="assets/images/trophy-free-icon-font.png" />
+
+</footer>
+
+
+<script src="sorting.js"></script>
+<script src="fire-api.js"></script>
+<script src="fire-auth.js"></script>
+<script src="lichess.js"></script>
+<script src="rating.js"></script>
+</body>
+
+</html>

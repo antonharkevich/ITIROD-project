@@ -26,7 +26,7 @@ function login(event){
   responsePromise = apiLogin(email, password)
   responsePromise.then(response => {
     alert('Welcome back')
-    window.location.replace("index.html");
+    window.location.replace("rating.html");
   });
 }
 

@@ -11,18 +11,18 @@
    <body>
       <div class="wrapper">
          <div class="title-text">
-            <div class="title login">
+            <h1 class="title login">
                Login Form
-            </div>
-            <div class="title signup">
+            </h1>
+            <h1 class="title signup">
                Signup Form
-            </div>
+            </h1>
          </div>
          <div class="form-container">
             <div class="slide-controls">
                <input type="radio" name="slide" id="login" checked>
                <input type="radio" name="slide" id="signup">
-               <label for="login" class="slide login">Login</label>
+               <label for="login" class="slide login">Login </label>
                <label for="signup" class="slide signup">Signup</label>
                <div class="slider-tab"></div>
             </div>
@@ -38,9 +38,9 @@
                      <div class="btn-layer"></div>
                      <input type="submit" value="Login">
                   </div>
-                  <div class="signup-link">
+                  <p class="signup-link">
                      Not a member? <a href="">Signup now</a>
-                  </div>
+                  </p>
                </form>
                <form onsubmit="signUp(event)" class="signup">
                   <div class="field">
@@ -60,7 +60,9 @@
             </div>
          </div>
       </div>
+      <script src="sorting.js"></script>
       <script src="fire-api.js"></script>
+      <script src="fire-auth.js"></script>
       <script src="auth.js"></script>
    </body>
 

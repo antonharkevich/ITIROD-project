@@ -24,7 +24,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     background-color: var(--color-back-body);
-    min-height: 100vh; /* чтоб footer был на дне, вроде vh здесь ничему не мешает*/
+    min-height: 100vh;
     display:flex; 
     flex-direction:column;
     justify-content:space-between;
@@ -45,11 +45,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .header {
-    width: 100%;
-    margin: 0 auto;
     min-height: 5rem;
-    padding: 1% 2% 0 2%;
-
+    padding: 1rem 2rem 0 2rem;
     top: 0;
     left: 0;
     right: 0;
@@ -81,7 +78,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav__link{
     display: inline-block;
-    vertical-align: top;
     margin: 0 1.2rem;
     position: relative;
 
@@ -96,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     display: block;
     width: 100%;
-    height: 3px;
+    height: 0.2rem;
 
 
     background-color: var(--color-white);
@@ -125,11 +121,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer{
     position: relative; 
     left: 0; bottom: 0; 
-    width: 100%;
-    padding: 1%;
+    padding: 1rem;
     background-color: var(--color-back-head);  
     border-top: 0.125rem solid var(--color-solid-silver);
-    margin: auto 0 0 0;
     min-height: 5rem;
     display: flex;
     justify-content: start;
@@ -138,52 +132,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__title{
-    width:50%;
+    width:40rem;
     text-align: right;
     font-size:2rem;
     color:var(--color-white);
-    padding: 1% 0 0 0;
+    padding: 1rem 0 0 0;
 }
 
 
 .index_main{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display:flex; 
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .main_radio {
-    width:30%;
-    height:auto;
-    padding: 5% 0 0 7%;
+  font-weight: bold; 
+  font-size: 1.5rem;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
+.form_radio{
+  margin:2rem 2rem 2rem 2rem;
+}
 
 .form_radio input[type="radio"] { 
     display: none; 
-     
+
 } 
 
 .form_radio input[type="radio"] + label { 
-    font-weight: bold; 
-    font-size: 2rem;
-    font-style: italic;
-    color: var(--input-color)
-    
+
+    color: var(--input-color);
 } 
 
 .form_radio input[type="radio"] + label span { 
    display: inline-block; 
    width: 1rem; 
    height: 1rem; 
-   margin: 2.5rem 0rem 2.5rem 2.5rem; 
+   margin: 0rem 1rem 0 1rem; 
    vertical-align: middle; 
    cursor: pointer; 
-    border-radius: 50%; 
+    border-radius: 0.5rem; 
     border: 0.3rem solid var(--color-white);
     background-color: var(--color-white); 
-    transition: background-color 0.24s linear;  
+    transition: background-color 0.24s linear; 
 } 
 
 
@@ -203,28 +199,45 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .canvas__wrapper {
-    padding: 5rem 2rem 1rem 0;
-    width:70%;
-    height: 80%;
     font-weight: bold; 
     font-size: 2rem;
     color: var(--color-white);
     text-align: center; 
+    display:flex; 
+    flex-direction:column;
+    justify-content:space-between;
 }
 
 
 .resize-canvas{
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+    margin: 1rem auto 3rem auto;
+    width:45rem;
+    height:25rem;
     border: 0.1rem solid var(--color-black);
 }
+
+
+.top_player_title_rating{
+  margin: 1rem auto 0 auto;
+  width:45rem;
+  color: var(--color-black);
+  background-color: var(--color-date);
+}
+
+
+.top_player_title{
+
+  color: var(--color-black);
+  background-color: var(--color-date);
+}
+
+
 
 
 
 .main_activity{
     margin: 0;
-    padding: 7% 0 3% 0;
+    padding: 7rem 0 3rem 0;
     position: relative;
 }
 
@@ -259,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: start;
     margin: 0;
-    padding: 7% 4% 5% 4%;
+    padding: 7rem 10rem 5rem 6rem;
     position: relative;
 }
 
@@ -268,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-around;
     align-items: start;
-    padding: 5% 4% 5% 4%;
+    padding: 5rem 4rem 5rem 4rem;
     position: relative;
 }
 
@@ -293,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main_top_player_activity{
     margin: 0;
-    padding:7% 4% 0 4%;
+    padding:7rem 4rem 0 4rem;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -307,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .blitz_section{
     font-weight: bold; 
-    font-size:1.3rem;
+    font-size:1.2rem;
     color: var(--color-white);
     text-align: center; 
     width: auto;
@@ -317,21 +330,21 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .main_rate_activity{
-    padding:5%  4% 5% 4%;
+    padding:5rem  4rem 5rem 4rem;
     position: relative;
 }
 
 
 
 .main_stat_activity{
-    padding: 5% 4% 5% 4%;
+    padding: 5rem 4rem 5rem 4rem;
     position: relative;
 }
 
 
 .main_win_stat_activity{
     margin: 0;
-    padding: 7% 4% 5% 4%;
+    padding: 7rem 4rem 5rem 4rem;
     position: relative;
 }
 
@@ -340,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .date_text{
     color: var(--color-date);
-    margin-left: 0.25rem;
+    margin: 0 0 0 0.25rem;
     font-style: italic;
     font-weight: bold;
 }
@@ -380,10 +393,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.top_player_title{
-    color: var(--color-black);
-    background-color: var(--color-date);
-}
+
 
 
 .top_player_string{
@@ -397,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 .GM{
     color: var(--color-date);
     text-align: left;
-    padding: 0 0 0 5%;
+    padding: 0 0 0 1rem;
 }
 
 .top_player{
@@ -408,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
 .top_rate{
     color: var(--color-red);
     text-align: right;
-    padding-right: 1.5rem;    
+    padding-right: 0 1.5rem 0 0;    
 }
 
 
@@ -557,13 +567,13 @@ input[type="radio"]{
 .form-inner form .field{
   height: 3rem;
   width: 20rem;
-  margin-top: 1rem;
+  margin: 1rem 0 0 0;
 }
 .form-inner form .field input{
   height: 3rem;
   width: 20rem;
   outline: none;
-  padding: 0 0 0 5%;
+  padding: 0 0 0 1rem;
   border-radius: 0.3rem;
   border: 0.1rem solid var(--color-light-grey);
   border-bottom-width: 0.2rem;
@@ -582,11 +592,11 @@ form .field input:focus::placeholder{
   color: var(--color-solid-silver);
 }
 .form-inner form .pass-link{
-  margin-top: 0.3rem;
+  margin: 0.3rem 0 0 0;
 }
 .form-inner form .signup-link{
   text-align: center;
-  margin-top: 2rem;
+  margin: 2rem 0 0 0;
 }
 .form-inner form .pass-link a,
 .form-inner form .signup-link a{
@@ -622,7 +632,7 @@ form .btn input[type="submit"]{
   background: none;
   border: none;
   color: var(--color-white);
-  padding-left: 0;
+  padding: 0;
   border-radius: 0.3rem;
   font-size: 1.2rem;
   font-weight: 500;
