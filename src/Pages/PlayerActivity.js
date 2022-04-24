@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./styles.css";
-import bullet from "./bullet.png"
+import bullet from "../Images/bullet.png"
 import {lichessAPIRequestActivity} from './lichess'
 import Login from './Login';
 import { useAuth } from './useAuth'

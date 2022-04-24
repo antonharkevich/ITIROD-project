@@ -233,7 +233,7 @@ export default function Rating() {
                 
             </section>
             <section class="canvas__wrapper">
-                <p class="top_player_title">Dynamic of player rating during chosen period</p>
+                <p class="top_player_title_rating">Dynamic of player rating during chosen period</p>
                 <canvas class="resize-canvas" ref={myCanvas} ></canvas>
             </section>
             </main>

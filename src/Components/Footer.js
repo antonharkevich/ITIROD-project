@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import trophy from "./trophy-free-icon-font.png";
+import trophy from "../Images/trophy-free-icon-font.png";
   
 const Footer = () => {
   return (

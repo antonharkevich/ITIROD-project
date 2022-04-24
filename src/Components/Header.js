@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import logo from './following-free-icon-font.png'
-import exit from './angle-square-right-free-icon-font.png'
+import logo from '../Images/following-free-icon-font.png'
+import exit from '../Images/angle-square-right-free-icon-font.png'
 import "./styles.css";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import { logout } from "../Pages/firebase";

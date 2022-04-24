@@ -9,7 +9,6 @@
     right: 0;
     bottom: 0; 
     height: 100px;
-    width: 100%;
     background-color: #7F8EA8;  
     border-top: 0.125rem solid #8e9197;
     margin: auto 0 0 0;
@@ -17,13 +16,13 @@
     display: flex;
     justify-content: start;
     align-items: left;
-
+    min-width: 45rem;
 }
 
 .footer__title{
     font-size:2rem;
     color:#ffff;
-    padding: 1% 0 0 0;
+    padding: 1rem 0 0 0;
 }
 
 
