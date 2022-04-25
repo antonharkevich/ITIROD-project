@@ -45,12 +45,12 @@ export default function Login(){
         <>
                 <div class="wrapper">
                 <div class="title-text">
-                    <div class="title login">
+                    <h1 class="title login">
                     Login Form
-                    </div>
-                    <div class="title signup">
+                    </h1>
+                    <h1 class="title signup">
                     Signup Form
-                    </div>
+                    </h1>
                 </div>
                 <div class="form-container">
                     <div class="slide-controls">
@@ -72,9 +72,9 @@ export default function Login(){
                             <div class="btn-layer"></div>
                             <input type="submit" value="Login"/>
                         </div>
-                        <div class="signup-link">
+                        <p class="signup-link">
                             Not a member? <a onClick={signclick}>Signup now</a>
-                        </div>
+                        </p>
                     </form>
                     <form onSubmit={signupp}class="signup">
                         <div class="field">

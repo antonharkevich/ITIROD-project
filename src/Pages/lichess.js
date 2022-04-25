@@ -61,7 +61,7 @@ const lichessAPIRequestWorstAndBestGames = async(user) =>{
           
           
           
-              for (let i in [0,1,2,3,4]){
+              for (let i = 0; i <5; i++){
           
                   best_players_win_names[i]  = response['stat']['bestWins']['results'][i]['opId']['name'];
               
@@ -78,21 +78,22 @@ const lichessAPIRequestWorstAndBestGames = async(user) =>{
           
               }
             let json_list  = []
-            let json = {};
-            json['win_streak_times'] = win_streak_times;
-            json['best_win_streak_time_from'] = best_win_streak_time_from
-            json['best_win_streak_time_to'] = best_win_streak_time_to
-            json['current_win_times'] = current_win_times
-            json['loose_streak_times'] = loose_streak_times
-            json['best_loose_streak_time_from'] = best_loose_streak_time_from
-            json['best_loose_streak_time_to'] = best_loose_streak_time_to
-            json['current_loose_times'] = current_loose_times
-            json['best_players_win_names'] = best_players_win_names
-            json['best_players_win_rates'] = best_players_win_rates
-            json['best_players_win_dates'] = best_players_win_dates
-            json['best_players_loose_names'] = best_players_loose_names
-            json['best_players_loose_rates'] = best_players_loose_rates
-            json['best_players_loose_dates'] = best_players_loose_dates
+            let json = {
+                'win_streak_times': win_streak_times,
+                'best_win_streak_time_from': best_win_streak_time_from,
+                'best_win_streak_time_to': best_win_streak_time_to,
+                'current_win_times': current_win_times,
+                'loose_streak_times': loose_streak_times,
+                'best_loose_streak_time_from': best_loose_streak_time_from,
+                'best_loose_streak_time_to': best_loose_streak_time_to,
+                'current_loose_times': current_loose_times,
+                'best_players_win_names': best_players_win_names,
+                'best_players_win_rates': best_players_win_rates,
+                'best_players_win_dates': best_players_win_dates,
+                'best_players_loose_names': best_players_loose_names,
+                'best_players_loose_rates': best_players_loose_rates,
+                'best_players_loose_dates': best_players_loose_dates
+            };
             json_list.push(json)
             return json_list;
 
@@ -167,7 +168,7 @@ const lichessAPIRequestStatistics = async(user) =>{
 
 
 
-            let  json = {};
+          
 
 
             const new_request2 = new Request('https://lichess.org/api/user/'+user+'/perf/bullet', myInit);
@@ -208,30 +209,33 @@ const lichessAPIRequestStatistics = async(user) =>{
         
 
 
-            let json_list = []
-            json['player_rate'] = player_rate;
-            json['progress_games'] = progress_games
-            json['progress'] = progress
-            json['deviation'] = deviation
-            json['games_number_all'] = games_number_all
-            json['games_number_rate'] = games_number_rate
-            json['play_time'] = play_time
-            json['wins_number'] = wins_number
-            json['wins_number_percent'] = wins_number_percent
-            json['loss_number'] = loss_number
-            json['loss_number_percent'] = loss_number_percent
-            json['draws_number'] = draws_number
-            json['draws_number_percent'] = draws_number_percent
-            json['weak_players_percent'] = weak_players_percent;
-            json['games_number_tournament'] = games_number_tournament
-            json['games_number_berserk'] = games_number_berserk
-            json['average_players_rate'] = average_players_rate
-            json['disconnects_number'] = disconnects_number
-            json['disconnects_number_percent'] = disconnects_number_percent
-            json['the_highest_rate'] = the_highest_rate
-            json['the_highest_rate_time'] = the_highest_rate_time
-            json['the_lowest_rate'] = the_lowest_rate
-            json['the_lowest_rate_time'] = the_lowest_rate_time
+            let json_list = [];
+
+            let  json = {
+                'player_rate': player_rate,
+                'progress_games': progress_games,
+                'progress': progress,
+                'deviation': deviation,
+                'games_number_all': games_number_all,
+                'games_number_rate': games_number_rate,
+                'play_time': play_time,
+                'wins_number': wins_number,
+                'wins_number_percent': wins_number_percent,
+                'loss_number': loss_number,
+                'loss_number_percent': loss_number_percent,
+                'draws_number': draws_number,
+                'draws_number_percent': draws_number_percent,
+                'weak_players_percent': weak_players_percent,
+                'games_number_tournament': games_number_tournament,
+                'games_number_berserk': games_number_berserk,
+                'average_players_rate': average_players_rate,
+                'disconnects_number': disconnects_number,
+                'disconnects_number_percent': disconnects_number_percent,
+                'the_highest_rate': the_highest_rate,
+                'the_highest_rate_time': the_highest_rate_time,
+                'the_lowest_rate': the_lowest_rate,
+                'the_lowest_rate_time': the_lowest_rate_time
+            };
             json_list.push(json)
             return json_list;
 
@@ -299,17 +303,18 @@ const lichessAPIRequestPerformance = async(user)=>{
 
 
 
-              let json = {};
-            json['weak_players_percent'] = weak_players_percent;
-            json['games_number_tournament'] = games_number_tournament
-            json['games_number_berserk'] = games_number_berserk
-            json['average_players_rate'] = average_players_rate
-            json['disconnects_number'] = disconnects_number
-            json['disconnects_number_percent'] = disconnects_number_percent
-            json['the_highest_rate'] = the_highest_rate
-            json['the_highest_rate_time'] = the_highest_rate_time
-            json['the_lowest_rate'] = the_lowest_rate
-            json['the_lowest_rate_time'] = the_lowest_rate_time
+            let json = {
+                'weak_players_percent': weak_players_percent,
+                'games_number_tournament': games_number_tournament,
+                'games_number_berserk': games_number_berserk,
+                'average_players_rate': average_players_rate,
+                'disconnects_number': disconnects_number,
+                'disconnects_number_percent': disconnects_number_percent,
+                'the_highest_rate': the_highest_rate,
+                'the_highest_rate_time': the_highest_rate_time,
+                'the_lowest_rate': the_lowest_rate,
+                'the_lowest_rate_time': the_lowest_rate_time
+            };
             return json;
 
     }
@@ -353,7 +358,7 @@ const lichessAPIRequestActivity= async (user) =>{
         
             let day_loss = []
         
-            for (let i in [0,1,2,3,4,5,6]){
+            for (let i = 0; i < 7; i++){
         
               let date = new Date(response[i]['interval']['start']);
               var options = {
@@ -393,15 +398,16 @@ const lichessAPIRequestActivity= async (user) =>{
             }
 
             let json_list = []
-            for (let i in [0,1,2,3,4,5,6]){
-                let json = {};
-                json['play_dates'] = play_dates[i];
-                json['games_amounts'] = games_amounts[i];
-                json['day_dynamics'] = day_dynamics[i];
-                json['day_rates'] = day_rates[i];
-                json['day_wins'] = day_wins[i];
-                json['day_loss'] = day_loss[i];
+            for (let i = 0; i < 7; i++){
 
+                let json = {
+                    'play_dates': play_dates[i],
+                    'games_amounts': games_amounts[i],
+                    'day_dynamics': day_dynamics[i],
+                    'day_rates': day_rates[i],
+                    'day_wins': day_wins[i],
+                    'day_loss': day_loss[i]
+                };
 
                 json_list.push(json)
 

@@ -2,10 +2,8 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
+import { sortByBlitz, sortByBullet, sortByRapid } from './sorting';
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCeKiRikX3shsobExn4udYoTv5Nl06u0i4",
     authDomain: "itirod-project.firebaseapp.com",
@@ -52,48 +50,47 @@ const fireLichessRequest = async() =>{
   
   
   
-        function sortByBullet(arr) {
-          arr.sort((a, b) => a.rate_bullet > b.rate_bullet ? -1 : 1);
-        }
+
   
         sortByBullet(tempDoc);
   
+        
+        let amount_of_site_users = tempDoc.length;
   
-        let j = tempDoc.length;
-  
-        if (j < 16){
-          for(let i = 0; i < j; i++){
+        if (amount_of_site_users < 16){
+          for(let i = 0; i < amount_of_site_users; i++){
             bullet_top_names[i] = tempDoc[i]['name'];
             bullet_top_rates[i] = tempDoc[i]['rate_bullet'];
-            if (bullet_top_rates[i] < 1200){
+            let player_bullet_rate = bullet_top_rates[i];
+            if (player_bullet_rate < 1200){
               bullet_top_ranks[i] = 'New'
             }
-            else if (bullet_top_rates[i] < 1400){
+            else if (player_bullet_rate < 1400){
               bullet_top_ranks[i] = 'D'
             }
-            else if (bullet_top_rates[i] < 1600){
+            else if (player_bullet_rate < 1600){
               bullet_top_ranks[i] = 'C'
             }
-            else if (bullet_top_rates[i] < 1800){
+            else if (player_bullet_rate < 1800){
               bullet_top_ranks[i] = 'B'
             }
-            else if (bullet_top_rates[i] < 2000){
+            else if (player_bullet_rate < 2000){
               bullet_top_ranks[i] = 'A'
             }
-            else if (bullet_top_rates[i] < 2200){
+            else if (player_bullet_rate < 2200){
               bullet_top_ranks[i] = 'CM'
             }
-            else if (bullet_top_rates[i] < 2400){
+            else if (player_bullet_rate < 2400){
               bullet_top_ranks[i] = 'FM'
             }
-            else if (bullet_top_rates[i] < 2500){
+            else if (player_bullet_rate < 2500){
               bullet_top_ranks[i] = 'IM'
             }
             else{
               bullet_top_ranks[i] = 'GM'
             }
           }
-          for(let i = j; i < 16; i++){
+          for(let i = amount_of_site_users; i < 16; i++){
             bullet_top_names[i] = 'N/A';
             bullet_top_rates[i] = 'N/A';
             bullet_top_ranks[i] = 'N/A'
@@ -103,28 +100,29 @@ const fireLichessRequest = async() =>{
           for(let i = 0; i < 16; i++){
             bullet_top_names[i] = tempDoc[i]['name'];
             bullet_top_rates[i] = tempDoc[i]['rate_bullet'];
-            if (bullet_top_rates[i] < 1200){
+            let player_bullet_rate = bullet_top_rates[i];
+            if (player_bullet_rate < 1200){
               bullet_top_ranks[i] = 'New'
             }
-            else if (bullet_top_rates[i] < 1400){
+            else if (player_bullet_rate < 1400){
               bullet_top_ranks[i] = 'D'
             }
-            else if (bullet_top_rates[i] < 1600){
+            else if (player_bullet_rate < 1600){
               bullet_top_ranks[i] = 'C'
             }
-            else if (bullet_top_rates[i] < 1800){
+            else if (player_bullet_rate < 1800){
               bullet_top_ranks[i] = 'B'
             }
-            else if (bullet_top_rates[i] < 2000){
+            else if (player_bullet_rate < 2000){
               bullet_top_ranks[i] = 'A'
             }
-            else if (bullet_top_rates[i] < 2200){
+            else if (player_bullet_rate < 2200){
               bullet_top_ranks[i] = 'CM'
             }
-            else if (bullet_top_rates[i] < 2400){
+            else if (player_bullet_rate < 2400){
               bullet_top_ranks[i] = 'FM'
             }
-            else if (bullet_top_rates[i] < 2500){
+            else if (player_bullet_rate < 2500){
               bullet_top_ranks[i] = 'IM'
             }
             else{
@@ -135,48 +133,46 @@ const fireLichessRequest = async() =>{
   
   
   
-        function sortByBlitz(arr) {
-          arr.sort((a, b) => a.rate_blitz > b.rate_blitz ? -1 : 1);
-        }
+
   
         sortByBlitz(tempDoc);
   
+
   
-        j = tempDoc.length;
-  
-        if (j < 16){
-          for(let i = 0; i < j; i++){
+        if (amount_of_site_users < 16){
+          for(let i = 0; i < amount_of_site_users; i++){
             blitz_top_names[i] = tempDoc[i]['name'];
             blitz_top_rates[i] = tempDoc[i]['rate_blitz'];
-            if (blitz_top_rates[i] < 1200){
+            let player_blitz_rate = blitz_top_rates[i];
+            if (player_blitz_rate < 1200){
               blitz_top_ranks[i] = 'New'
             }
-            else if (blitz_top_rates[i] < 1400){
+            else if (player_blitz_rate < 1400){
               blitz_top_ranks[i] = 'D'
             }
-            else if (blitz_top_rates[i] < 1600){
+            else if (player_blitz_rate < 1600){
               blitz_top_ranks[i] = 'C'
             }
-            else if (blitz_top_rates[i] < 1800){
+            else if (player_blitz_rate < 1800){
               blitz_top_ranks[i] = 'B'
             }
-            else if (blitz_top_rates[i] < 2000){
+            else if (player_blitz_rate < 2000){
               blitz_top_ranks[i] = 'A'
             }
-            else if (blitz_top_rates[i] < 2200){
+            else if (player_blitz_rate < 2200){
               blitz_top_ranks[i] = 'CM'
             }
-            else if (blitz_top_rates[i] < 2400){
+            else if (player_blitz_rate < 2400){
               blitz_top_ranks[i] = 'FM'
             }
-            else if (blitz_top_rates[i] < 2500){
+            else if (player_blitz_rate < 2500){
               blitz_top_ranks[i] = 'IM'
             }
             else{
               blitz_top_ranks[i] = 'GM'
             }
           }
-          for(let i = j; i < 16; i++){
+          for(let i = amount_of_site_users; i < 16; i++){
             blitz_top_names[i] = 'N/A';
             blitz_top_rates[i] = 'N/A';
             blitz_top_ranks[i] = 'N/A'
@@ -186,28 +182,29 @@ const fireLichessRequest = async() =>{
           for(let i = 0; i < 16; i++){
             blitz_top_names[i] = tempDoc[i]['name'];
             blitz_top_rates[i] = tempDoc[i]['rate_blitz'];
-            if (blitz_top_rates[i] < 1200){
+            let player_blitz_rate = blitz_top_rates[i];
+            if (player_blitz_rate < 1200){
               blitz_top_ranks[i] = 'New'
             }
-            else if (blitz_top_rates[i] < 1400){
+            else if (player_blitz_rate < 1400){
               blitz_top_ranks[i] = 'D'
             }
-            else if (blitz_top_rates[i] < 1600){
+            else if (player_blitz_rate < 1600){
               blitz_top_ranks[i] = 'C'
             }
-            else if (blitz_top_rates[i] < 1800){
+            else if (player_blitz_rate < 1800){
               blitz_top_ranks[i] = 'B'
             }
-            else if (blitz_top_rates[i] < 2000){
+            else if (player_blitz_rate < 2000){
               blitz_top_ranks[i] = 'A'
             }
-            else if (blitz_top_rates[i] < 2200){
+            else if (player_blitz_rate < 2200){
               blitz_top_ranks[i] = 'CM'
             }
-            else if (blitz_top_rates[i] < 2400){
+            else if (player_blitz_rate < 2400){
               blitz_top_ranks[i] = 'FM'
             }
-            else if (blitz_top_rates[i] < 2500){
+            else if (player_blitz_rate < 2500){
               blitz_top_ranks[i] = 'IM'
             }
             else{
@@ -219,48 +216,46 @@ const fireLichessRequest = async() =>{
   
         
   
-        function sortByRapid(arr) {
-          arr.sort((a, b) => a.rate_rapid > b.rate_rapid ? -1 : 1);
-        }
+
   
         sortByRapid(tempDoc);
   
   
-        j = tempDoc.length;
   
-        if (j < 16){
-          for(let i = 0; i < j; i++){
+        if (amount_of_site_users < 16){
+          for(let i = 0; i < amount_of_site_users; i++){
             rapid_top_names[i] = tempDoc[i]['name'];
             rapid_top_rates[i] = tempDoc[i]['rate_rapid'];
-            if (rapid_top_rates[i] < 1200){
+            let player_rapid_rate = rapid_top_rates[i];
+            if (player_rapid_rate < 1200){
               rapid_top_ranks[i] = 'New'
             }
-            else if (rapid_top_rates[i] < 1400){
+            else if (player_rapid_rate < 1400){
               rapid_top_ranks[i] = 'D'
             }
-            else if (rapid_top_rates[i] < 1600){
+            else if (player_rapid_rate < 1600){
               rapid_top_ranks[i] = 'C'
             }
-            else if (rapid_top_rates[i] < 1800){
+            else if (player_rapid_rate < 1800){
               rapid_top_ranks[i] = 'B'
             }
-            else if (rapid_top_rates[i] < 2000){
+            else if (player_rapid_rate < 2000){
               rapid_top_ranks[i] = 'A'
             }
-            else if (rapid_top_rates[i] < 2200){
+            else if (player_rapid_rate < 2200){
               rapid_top_ranks[i] = 'CM'
             }
-            else if (rapid_top_rates[i] < 2400){
+            else if (player_rapid_rate < 2400){
               rapid_top_ranks[i] = 'FM'
             }
-            else if (rapid_top_rates[i] < 2500){
+            else if (player_rapid_rate < 2500){
               rapid_top_ranks[i] = 'IM'
             }
             else{
               rapid_top_ranks[i] = 'GM'
             }
           }
-          for(let i = j; i < 16; i++){
+          for(let i = amount_of_site_users; i < 16; i++){
             rapid_top_names[i] = 'N/A';
             rapid_top_rates[i] = 'N/A';
             rapid_top_ranks[i] = 'N/A'
@@ -270,28 +265,29 @@ const fireLichessRequest = async() =>{
           for(let i = 0; i < 16; i++){
             rapid_top_names[i] = tempDoc[i]['name'];
             rapid_top_rates[i] = tempDoc[i]['rate_blitz'];
-            if (rapid_top_rates[i] < 1200){
+            let player_rapid_rate = rapid_top_rates[i];
+            if (player_rapid_rate < 1200){
               rapid_top_ranks[i] = 'New'
             }
-            else if (rapid_top_rates[i] < 1400){
+            else if (player_rapid_rate < 1400){
               rapid_top_ranks[i] = 'D'
             }
-            else if (rapid_top_rates[i] < 1600){
+            else if (player_rapid_rate < 1600){
               rapid_top_ranks[i] = 'C'
             }
-            else if (rapid_top_rates[i] < 1800){
+            else if (player_rapid_rate < 1800){
               rapid_top_ranks[i] = 'B'
             }
-            else if (rapid_top_rates[i] < 2000){
+            else if (player_rapid_rate < 2000){
               rapid_top_ranks[i] = 'A'
             }
-            else if (rapid_top_rates[i] < 2200){
+            else if (player_rapid_rate < 2200){
               rapid_top_ranks[i] = 'CM'
             }
-            else if (rapid_top_rates[i] < 2400){
+            else if (player_rapid_rate < 2400){
               rapid_top_ranks[i] = 'FM'
             }
-            else if (rapid_top_rates[i] < 2500){
+            else if (player_rapid_rate < 2500){
               rapid_top_ranks[i] = 'IM'
             }
             else{
@@ -302,21 +298,21 @@ const fireLichessRequest = async() =>{
 
 
         let response_list = []
-        let response = {};
-        response['bullet_top_names'] = bullet_top_names  
-        response['blitz_top_names'] = blitz_top_names  
-        response['rapid_top_names'] = rapid_top_names  
-      
-      
-        response['bullet_top_ranks'] = bullet_top_ranks
-        response['blitz_top_ranks'] = blitz_top_ranks 
-        response['rapid_top_ranks'] = rapid_top_ranks 
-      
-      
-        response['bullet_top_rates'] = bullet_top_rates 
-        response['blitz_top_rates'] = blitz_top_rates 
-        response['rapid_top_rates'] = rapid_top_rates
+        let response = {
+          'bullet_top_names': bullet_top_names,  
+          'blitz_top_names': blitz_top_names, 
+          'rapid_top_names': rapid_top_names,  
         
+        
+          'bullet_top_ranks': bullet_top_ranks,
+          'blitz_top_ranks': blitz_top_ranks, 
+          'rapid_top_ranks': rapid_top_ranks, 
+        
+        
+          'bullet_top_rates': bullet_top_rates, 
+          'blitz_top_rates': blitz_top_rates, 
+          'rapid_top_rates': rapid_top_rates
+        };
         response_list.push(response)
         return response_list
 
@@ -360,4 +356,4 @@ const signUp = async(email, password, name, rate_blitz, rate_bullet, rate_rapid)
 
 
 
-export {fireLichessRequest, user, login, signUp, logout, db, collection}
+export {fireLichessRequest, user, login, signUp, logout, db, auth, collection}

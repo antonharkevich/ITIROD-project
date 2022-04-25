@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getAuth }  from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from './firebase';
+import { db, auth } from './firebase';
 
 
 
@@ -15,7 +15,7 @@ function useAuth() {
   })
 
   useEffect(() => {
-    const unregisterAuthObserver = getAuth().onAuthStateChanged(user =>{
+    const unregisterAuthObserver = auth.onAuthStateChanged(user =>{
         if(user){
                 const docRef = doc(db, 'users', user.uid);
                 var userName = 'NO';

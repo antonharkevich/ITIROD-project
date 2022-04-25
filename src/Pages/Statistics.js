@@ -53,7 +53,7 @@ export default function Rating() {
             if (descriptionId == "week"){
                 labels = [];
                 data = [];
-                let j = rateItems.length - 7;
+                let j = rateItems.length - 7;//проверка что данных будет меньше чем 7 дней
                 if (j < 0){
                     j = 0
                 } 
