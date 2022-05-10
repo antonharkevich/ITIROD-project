@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/ITIROD-project/static/css/main.3d83d87c.css",
-    "main.js": "/ITIROD-project/static/js/main.14338b53.js",
+    "main.js": "/ITIROD-project/static/js/main.bc5bfe42.js",
     "static/js/787.5a017f45.chunk.js": "/ITIROD-project/static/js/787.5a017f45.chunk.js",
     "static/media/trophy-free-icon-font.png": "/ITIROD-project/static/media/trophy-free-icon-font.838dcfa52102750e11d6.png",
     "static/media/following-free-icon-font.png": "/ITIROD-project/static/media/following-free-icon-font.217b5bad5a9b57594a48.png",
     "static/media/angle-square-right-free-icon-font.png": "/ITIROD-project/static/media/angle-square-right-free-icon-font.b34585d0809adf5e56ee.png",
     "index.html": "/ITIROD-project/index.html",
     "main.3d83d87c.css.map": "/ITIROD-project/static/css/main.3d83d87c.css.map",
-    "main.14338b53.js.map": "/ITIROD-project/static/js/main.14338b53.js.map",
+    "main.bc5bfe42.js.map": "/ITIROD-project/static/js/main.bc5bfe42.js.map",
     "787.5a017f45.chunk.js.map": "/ITIROD-project/static/js/787.5a017f45.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d83d87c.css",
-    "static/js/main.14338b53.js"
+    "static/js/main.bc5bfe42.js"
   ]
 }
