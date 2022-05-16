@@ -1,6 +1,6 @@
 import React, { useRef  } from "react";
-import "./styles.css";
 import { login, signUp} from "./firebase";
+import "./styles.css";
 
 
 
@@ -42,8 +42,8 @@ export default function Login(){
     }
       
     return(
-        <>
-                <div class="wrapper">
+        <div class="wrapper">
+
                 <div class="title-text">
                     <h1 class="title login">
                     Login Form
@@ -103,6 +103,6 @@ export default function Login(){
                     </div>
                 </div>
             </div>
-        </>
+
     )
 }

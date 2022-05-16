@@ -2,8 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from '../Images/following-free-icon-font.png'
 import exit from '../Images/angle-square-right-free-icon-font.png'
-import "./styles.css";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import {HashRouter as Router, Route, Routes} from "react-router-dom"
 import { logout } from "../Pages/firebase";
 import { useAuth} from "../Pages/useAuth";
 
@@ -13,6 +12,8 @@ import Statistics from '../Pages/Statistics';
 import PlayerInfo from '../Pages/PlayerInfo';
 import TopPlayers from '../Pages/TopPlayers';
 import PlayerBestAndWorstGames from '../Pages/PlayerBestAndWorstGames';
+
+import "./styles.css";
 
 
 
@@ -37,16 +38,16 @@ export default function Header() {
 
         return(
         <>
-            <Navbar collapseOnSelect expand="md" className="color-nav" variant="dark">
+            <Navbar collapseOnSelect expand="md" className="color-nav" variant="dark" style={{ minWidth: '45rem' }}>
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/">Top Players</Nav.Link>
-                            <Nav.Link href="/statistics">Statistics</Nav.Link>
-                            <Nav.Link href="/activity">Player activity</Nav.Link>
-                            <Nav.Link href="/top-games">Player best and worst games</Nav.Link>
-                            <Nav.Link href="/info">Player info</Nav.Link>
+                            <Nav.Link href="#/">Top Players</Nav.Link>
+                            <Nav.Link href="#/statistics">Statistics</Nav.Link>
+                            <Nav.Link href="#/activity">Player activity</Nav.Link>
+                            <Nav.Link href="#/top-games">Player best and worst games</Nav.Link>
+                            <Nav.Link href="#/info">Player info</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Brand>
@@ -59,7 +60,7 @@ export default function Header() {
                         />
                     </Navbar.Brand>
                     <Navbar.Text>
-                        <h3>&nbsp; {userName}  &nbsp;</h3>
+                        <h1>&nbsp; {userName}  &nbsp;</h1>
                     </Navbar.Text>
                     <Navbar.Brand>
                         <img

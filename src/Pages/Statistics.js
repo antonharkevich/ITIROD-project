@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import "./styles.css";
 import { lichessAPIRequestRating } from './lichess';
 import Login from './Login';
-import { useAuth } from './useAuth'
+import { useAuth } from './useAuth';
+import "./styles.css";
 
 
 export default function Rating() {

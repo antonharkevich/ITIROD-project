@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import "./styles.css";
 import { lichessAPIRequestStatistics } from './lichess';
 import Login from './Login';
-import { useAuth } from './useAuth'
+import { useAuth } from './useAuth';
+import "./styles.css";
 
 export default function Info() {
     const { pending, isSignedIn, user, auth, userName} = useAuth()

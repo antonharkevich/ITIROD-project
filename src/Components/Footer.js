@@ -1,13 +1,14 @@
 import React from "react";
-import "./styles.css";
 import trophy from "../Images/trophy-free-icon-font.png";
+
+import "./styles.css";
   
 const Footer = () => {
   return (
     <footer class="footer">
-        <div class="footer__title">
+        <p class="footer__title">
             Statistics from Lichess with Love
-        </div>
+        </p>
         <img class = "footer__logo" src={trophy} />
 
     </footer>
